@@ -1,4 +1,3 @@
-import NatureCard from "@/app/components/card";
 import Carousel from "@/app/components/swiper";
 export default async function Page({
   params,
