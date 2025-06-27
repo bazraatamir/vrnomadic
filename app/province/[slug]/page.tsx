@@ -6,7 +6,7 @@ export default async function Page({
 }) {
   const {slug} = await params;
   return (
-    <div className='container bg-white mx-auto'>
+    <div className='container bg-[#EDEDED] mx-auto'>
       <section className=' mx-auto p-4 mt-16'>
         <div className='w-full mx-auto h-[600px] relative overflow-hidden'>
           <img

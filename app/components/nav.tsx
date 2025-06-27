@@ -1,11 +1,12 @@
 // components/Header.tsx
 "use client";
-
+import {useState} from "react";
 import Link from "next/link";
 
 export default function Header() {
+  const [lang, setLang] = useState<"MN" | "EN">("MN");
   return (
-    <header className='container flex items-center justify-between p-4  bg-white mx-auto'>
+    <header className='container bg-[#EDEDED] flex items-center justify-between p-4   mx-auto '>
       {/* Logo */}
       <div className='flex items-center space-x-2'>
         <img
@@ -25,12 +26,23 @@ export default function Header() {
       {/* Actions */}
       <div className='flex items-center space-x-4 text-sm text-gray-700'>
         <Link href='#'>ХАМТРАН АЖИЛЛАХ</Link>
+
         <div className='flex space-x-1'>
-          <Link href='#' className='text-blue-600 font-medium'>
+          <button
+            onClick={() => setLang("MN")}
+            className={`hover:underline ${
+              lang === "MN" ? "text-blue-600 font-medium" : "text-gray-600"
+            }`}>
             MN
-          </Link>
+          </button>
           <span>|</span>
-          <Link href='#'>EN</Link>
+          <button
+            onClick={() => setLang("EN")}
+            className={`hover:underline ${
+              lang === "EN" ? "text-blue-600 font-medium" : "text-gray-600"
+            }`}>
+            EN
+          </button>
         </div>
       </div>
     </header>
